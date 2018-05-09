@@ -6,14 +6,29 @@
 //  Copyright © 2018年 潘秀清. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#ifndef uWebSocket_h
+#define uWebSocket_h
 
-//! Project version number for uWebSocket.
-FOUNDATION_EXPORT double uWebSocketVersionNumber;
+#import <Foundation/Foundation.h>
+@protocol uWSDelegate
 
-//! Project version string for uWebSocket.
-FOUNDATION_EXPORT const unsigned char uWebSocketVersionString[];
+- (void)onMessage:(char *)message length:(size_t)length;
+- (void)onConnect;
+- (void)onDisconnect;
 
-// In this header, you should import all the public headers of your framework using statements like #import <uWebSocket/PublicHeader.h>
+@end
+
+@interface uWSco : NSObject
+
+@property(nonatomic, strong) id<uWSDelegate> delegate;
+
++ (instancetype)initWithMessageDelegate: (id<uWSDelegate>)delegate;
+- (void)runServer: (uint16)port;
+- (void)send: (char *)str len:(size_t)length;
+
+@end
 
 
+
+
+#endif /* uWebSocket_h */

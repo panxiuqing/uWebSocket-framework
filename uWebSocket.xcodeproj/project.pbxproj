@@ -10,6 +10,11 @@
 		91DF8CB920A283F700C882D1 /* uWebSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DF8CAF20A283F700C882D1 /* uWebSocket.framework */; };
 		91DF8CBE20A283F700C882D1 /* uWebSocketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DF8CBD20A283F700C882D1 /* uWebSocketTests.m */; };
 		91DF8CC020A283F700C882D1 /* uWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 91DF8CB220A283F700C882D1 /* uWebSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91DF8CD920A288C800C882D1 /* uWebSocket.mm in Sources */ = {isa = PBXBuildFile; fileRef = 91DF8CD820A288C800C882D1 /* uWebSocket.mm */; };
+		91DF8CE220A2AB0200C882D1 /* libuWS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DF8CE120A2AB0200C882D1 /* libuWS.a */; };
+		91DF8CE820A2BEE500C882D1 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DF8CE720A2BEE500C882D1 /* libssl.a */; };
+		91DF8CEA20A2BEE900C882D1 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DF8CE920A2BEE900C882D1 /* libcrypto.a */; };
+		91DF8CEC20A2BF0E00C882D1 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DF8CEB20A2BF0E00C882D1 /* libuv.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,12 @@
 		91DF8CB820A283F700C882D1 /* uWebSocketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uWebSocketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91DF8CBD20A283F700C882D1 /* uWebSocketTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uWebSocketTests.m; sourceTree = "<group>"; };
 		91DF8CBF20A283F700C882D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91DF8CD820A288C800C882D1 /* uWebSocket.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = uWebSocket.mm; sourceTree = "<group>"; };
+		91DF8CE120A2AB0200C882D1 /* libuWS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libuWS.a; path = uWebSocket/libs/libuWS.a; sourceTree = "<group>"; };
+		91DF8CE720A2BEE500C882D1 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../../../../../../usr/local/Cellar/openssl/1.0.2o_1/lib/libssl.a; sourceTree = "<group>"; };
+		91DF8CE920A2BEE900C882D1 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../../../../../../usr/local/Cellar/openssl/1.0.2o_1/lib/libcrypto.a; sourceTree = "<group>"; };
+		91DF8CEB20A2BF0E00C882D1 /* libuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libuv.a; path = ../../../../../../../usr/local/Cellar/libuv/1.20.2/lib/libuv.a; sourceTree = "<group>"; };
+		91DF8CEE20A2F27900C882D1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +47,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91DF8CE220A2AB0200C882D1 /* libuWS.a in Frameworks */,
+				91DF8CE820A2BEE500C882D1 /* libssl.a in Frameworks */,
+				91DF8CEA20A2BEE900C882D1 /* libcrypto.a in Frameworks */,
+				91DF8CEC20A2BF0E00C882D1 /* libuv.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,9 +68,11 @@
 		91DF8CA520A283F700C882D1 = {
 			isa = PBXGroup;
 			children = (
+				91DF8CEE20A2F27900C882D1 /* README.md */,
 				91DF8CB120A283F700C882D1 /* uWebSocket */,
 				91DF8CBC20A283F700C882D1 /* uWebSocketTests */,
 				91DF8CB020A283F700C882D1 /* Products */,
+				91DF8CDA20A289DA00C882D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				91DF8CB220A283F700C882D1 /* uWebSocket.h */,
+				91DF8CD820A288C800C882D1 /* uWebSocket.mm */,
 				91DF8CB320A283F700C882D1 /* Info.plist */,
 			);
 			path = uWebSocket;
@@ -84,6 +102,17 @@
 				91DF8CBF20A283F700C882D1 /* Info.plist */,
 			);
 			path = uWebSocketTests;
+			sourceTree = "<group>";
+		};
+		91DF8CDA20A289DA00C882D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91DF8CEB20A2BF0E00C882D1 /* libuv.a */,
+				91DF8CE920A2BEE900C882D1 /* libcrypto.a */,
+				91DF8CE720A2BEE500C882D1 /* libssl.a */,
+				91DF8CE120A2AB0200C882D1 /* libuWS.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91DF8CD920A288C800C882D1 /* uWebSocket.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +297,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -322,6 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -342,12 +374,24 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/opt/openssl/include,
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = uWebSocket/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/uWebSocket/libs",
+					"$(PROJECT_DIR)",
+					/usr/local/Cellar/openssl/1.0.2o_1/lib,
+					/usr/local/Cellar/libuv/1.20.2/lib,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.blockinline.uWebSocket;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -367,12 +411,24 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/opt/openssl/include,
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = uWebSocket/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/uWebSocket/libs",
+					"$(PROJECT_DIR)",
+					/usr/local/Cellar/openssl/1.0.2o_1/lib,
+					/usr/local/Cellar/libuv/1.20.2/lib,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.blockinline.uWebSocket;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
